@@ -6,6 +6,12 @@ const config = require("./config/db");
 const { PORT } = require("./config/variabelEnv");
 const product = require("./routes/product");
 const picture = require("./routes/picture");
+const mongodbbank = require("./routes/codeomongodbbank");
+const mongodb = require("./routes/codeomongodb");
+const mongodbcms = require("./routes/codeomongodbcms");
+const mongodbledger = require("./routes/codeomongodbledger");
+
+
 
 const Port = PORT || 3000;
 const app = express();
@@ -19,6 +25,13 @@ app.get("/", function(req, res) {
 });
 app.use("/product", product);
 app.use("/pict", picture);
+app.use("/mongodbbank", mongodbbank);
+app.use("/mongodb", mongodb);
+app.use("/mongodbcms", mongodbcms);
+app.use("/mongodbledger", mongodbledger);
+
+
+
 
 if (!config) {
   console.log({
